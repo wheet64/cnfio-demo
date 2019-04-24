@@ -1,0 +1,3 @@
+# cnfio-demo
+CREATE USER 'cnfio-demo'@'%' IDENTIFIED WITH mysql_native_password AS '***';GRANT USAGE ON *.* TO 'cnfio-demo'@'%' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;CREATE DATABASE IF NOT EXISTS `cnfio-demo`;GRANT ALL PRIVILEGES ON `cnfio-demo`.* TO 'cnfio-demo'@'%';
+CREATE TABLE `cnfio-demo`.`users` ( `uid` VARCHAR(15) NOT NULL , `firstName` VARCHAR(35) NOT NULL , `lastName` VARCHAR(35) NOT NULL , `email` VARCHAR(255) NOT NULL , PRIMARY KEY (`uid`)) ENGINE = InnoDB;
