@@ -32,17 +32,14 @@ class controller {
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item<?=$arg['nav']=='home' ? ' active' : ''?>">
             <a class="nav-link" href="<?=APP_BASE?>/">Home</a>
           </li>
-<?php if (!empty($_COOKIE['u'])) { ?>
-          <li class="nav-item<?=$arg['nav']=='mod' ? ' active' : ''?>">
+          <li id="mod_nav" class="nav-item<?=$arg['nav']=='mod' ? ' active' : ''?>"<?=empty($_COOKIE['u']) || !empty($_SESSION['mod_access']) ? ' style="display:none;"' : ''?>>
             <a class="nav-link" href="<?=APP_BASE?>/mod/">Moderate</a>
           </li>
-<?php } ?>
         </ul>
       </div>
     </nav>
@@ -73,7 +70,8 @@ class controller {
      messagingSenderId: "853490055246"
    };
    firebase.initializeApp(config);
-   var uid = <?=empty($_COOKIE['u']) ? 'undefined' : "'".addslashes($_COOKIE['u'])."'"?>;
+   <?=empty($_COOKIE['u']) ? '' : "var uid = '".addslashes($_COOKIE['u'])."';"?>
+   <?=empty($_SESSION['mod_access']) ? '' : 'var access_mod = true;'?>
   </script>
   </body>
 </html>

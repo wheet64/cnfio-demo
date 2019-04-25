@@ -5,7 +5,7 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Social Q&amp;A</h5>
-    <h6 class="card-subtitle text-muted">Vote by clicking / tapping the arrow.</h6>
+    <h6 class="card-subtitle text-muted">Vote by clicking / tapping the number.</h6>
     <ul id="questions" class="list-group mt-3">
     </ul>
   </div>

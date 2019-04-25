@@ -10,4 +10,5 @@
 
   // Doom2:iddqd
   define('MOD_PWD', 'c0efbd07198718b77da9814a5d2cf42c');
+  define('MOD_MSG_INVALID', 'Invalid Password');
 ?>
