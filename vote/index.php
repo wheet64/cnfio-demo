@@ -37,7 +37,7 @@
   if (!empty($_POST['d'])) {
     if ($database->getReference(FB_DB)->getSnapshot()->hasChild(trim($_POST['d']))) {
       // TODO: verify that the uid from the cookie exists in the MySQL DB
-      if ($_SESSION['access'] == 'mod') {
+      if ($_SESSION['mod_access'] == 'mod') {
         $database->getReference(FB_DB)->getChild(trim($_POST['d']))->remove();
       }
     }
